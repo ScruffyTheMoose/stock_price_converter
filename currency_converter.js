@@ -13,4 +13,11 @@ const getExchangeRate = async (fromCurrency, toCurrency) => {
     return exRate;
 }
 
-getExchangeRate('USD', 'EUR');
+// getExchangeRate('USD', 'EUR');
+
+const getCountries = async (toCurrency) => {
+    const response = await axios.get(`https://restcountries.eu/rest/v2/currency/${toCurrency}`);
+    console.log(response.data);
+}
+
+getCountries('USD');
